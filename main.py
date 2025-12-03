@@ -1085,15 +1085,16 @@ with rate_col1:
 # --- Standard Generator ---
 with rate_col2:
     st.markdown("**Standard Generator**")
-
     standard_weekly_rate = st.number_input(
-    "Weekly Rate ($)"),
-    min_value=0.0,
-    max_value=100000.0,
-    value=0.0,
-    step=50.0,
-    format="%.2f",
-    key="standard_weekly_rate"
+        "Weekly Rate ($)",
+        min_value=0.0,
+        max_value=100000.0,
+        value=0.0,
+        step=50.0,
+        format="%.2f",
+        key="standard_weekly_rate"
+    )
+
     
 
     standard_monthly_rate = st.number_input(
