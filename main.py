@@ -1007,7 +1007,7 @@ with fuel_col1:
      value=0.00,
      step=0.01,
      key="local_fuel_price"
-)
+
    
 with fuel_col2:
      fuel_delivery_fee = st.number_input("Fuel Delivery Fee ($)"),
@@ -1017,7 +1017,7 @@ with fuel_col2:
      step=1.0,            # float
      format="%.2f",       # show two decimal places
      key="fuel_delivery_fee"
-     )
+     
         
         # Row 2: PM interval and PM charge
 st.markdown("**Maintenance Information**")
@@ -1031,7 +1031,7 @@ with pm_col1:
      value=0,
      step=1.0,
      key="pm_interval_hrs"
-    )
+    
 
 with pm_col2:
      pm_charge_selection = st.radio("Is there a PM Charge?"),
@@ -1039,7 +1039,7 @@ with pm_col2:
      index=0,
      key="pm_charge_radio",
      horizontal=True
-    )
+    
             
 if pm_charge_selection == "Yes": cost_per_pm = st.number_input("Cost per PM ($)"),
    min_value=0.0,
@@ -1048,7 +1048,7 @@ if pm_charge_selection == "Yes": cost_per_pm = st.number_input("Cost per PM ($)"
    step=0.1,
    format="%.2f",
    key="cost_per_pm"
-  )
+  
         
         # Row 3: Weekly and Monthly rates for both systems
 st.markdown("**System Rates**")
@@ -1066,7 +1066,7 @@ with rate_col1:
      step=50.0,
      format="%.2f",
      key="eboss_weekly_rate"
-    )
+    
 
      eboss_monthly_rate = st.number_input("Monthly Rate ($)"),
      min_value=0.0,           # safer than -1.00
@@ -1075,7 +1075,7 @@ with rate_col1:
      step=50.0,
      format="%.2f",
      key="eboss_monthly_rate"
-    )
+    
 
 # --- Standard Generator ---
 with rate_col2:
@@ -1088,7 +1088,7 @@ with rate_col2:
     step=50.0,
     format="%.2f",
     key="standard_weekly_rate"
-    )
+    
 
     standard_monthly_rate = st.number_input("Monthly Rate ($)"),
         min_value=0.0,
@@ -1097,7 +1097,7 @@ with rate_col2:
         step=50.0,
         format="%.2f",
         key="standard_monthly_rate"
-    )
+    
 
         # Action buttons
 st.divider()
