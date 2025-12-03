@@ -5,9 +5,9 @@ import streamlit as st
 
 st.set_page_config(page_title="EBOSS® Tool", layout="wide", initial_sidebar_state="collapsed")
 
-apply_theme()
-ensure_state()
-render_logo()
+#apply_theme()
+#ensure_state()
+#render_logo()
 
 st.header("EBOSS® Home")
 render_global_header(mode="external")
