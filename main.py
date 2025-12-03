@@ -1034,7 +1034,7 @@ with pm_col1:
     
 
 with pm_col2:
-     pm_charge_selection = st.radio("Is there a PM Charge?"),
+     pm_charge_selection = st.radio_input("Is there a PM Charge?"),
      options=["No", "Yes"],
      index=0,
      key="pm_charge_radio",
