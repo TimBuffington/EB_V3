@@ -1034,13 +1034,17 @@ with pm_col1:
     
 
 with pm_col2:
-     pm_charge_selection = st.radio_input("Is there a PM Charge?"),
-     options=["No", "Yes"],
-     index=0,
-     key="pm_charge_radio",
-     horizontal=True
+    pm_charge_selection = st.radio(
+        "Is there a PM Charge?",
+        options=["No", "Yes"],
+        index=0,
+        key="pm_charge_radio",
+        horizontal=True
+    )
+
     
-if pm_charge_selection == "Yes": cost_per_pm = st.number_input("Cost per PM ($)"),
+if pm_charge_selection == "Yes": cost_per_pm = st.number_input(
+"Cost per PM ($)"),
 min_value=0.0,
 max_value=10000.0,
 value=0.0,
@@ -1058,7 +1062,8 @@ with rate_col1:
      st.markdown("**EBOSS Hybrid System**")
 
      default_rate = 1500.0
-     eboss_weekly_rate = st.number_input("Weekly Rate ($)"),
+     eboss_weekly_rate = st.number_input(
+     "Weekly Rate ($)"),
      min_value=0.0,
      max_value=100000.0,
      value=max(default_rate, 0.0),
@@ -1067,7 +1072,8 @@ with rate_col1:
      key="eboss_weekly_rate"
     
 
-     eboss_monthly_rate = st.number_input("Monthly Rate ($)"),
+     eboss_monthly_rate = st.number_input(
+     "Monthly Rate ($)"),
      min_value=0.0,           # safer than -1.00
      max_value=100000.0,
      value=0.0,
