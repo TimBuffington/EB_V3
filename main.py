@@ -1098,14 +1098,14 @@ with rate_col2:
     
 
     standard_monthly_rate = st.number_input(
-    "Monthly Rate ($)"),
-    min_value=0.0,
-    max_value=100000.0,
-    value=0.0,
-    step=50.0,
-    format="%.2f",
-    key="standard_monthly_rate"
-    
+        "Monthly Rate ($)",
+        min_value=0.0,
+        max_value=100000.0,
+        value=0.0,
+        step=50.0,
+        format="%.2f",
+        key="standard_monthly_rate"
+   )
 
         # Action buttons
 st.divider()
