@@ -1001,25 +1001,23 @@ st.subheader("Parameters")
 st.markdown("**Fuel Information**")
 fuel_col1, fuel_col2 = st.columns([1, 1])
 with fuel_col1:
-           local_fuel_price = st.number_input(
-    "Local Fuel Price / Gal ($)",
-    min_value=-1.0,
-    max_value=1000.0,
-    value=0.00,
-    step=0.01,
-    key="local_fuel_price"
+     local_fuel_price = st.number_input("Local Fuel Price / Gal ($)"),
+     min_value=-1.0,
+     max_value=1000.0,
+     value=0.00,
+     step=0.01,
+     key="local_fuel_price"
 )
    
 with fuel_col2:
-    fuel_delivery_fee = st.number_input(
-            "Fuel Delivery Fee ($)",
-    min_value=0.0,       # float
-    max_value=1000.0,    # float
-    value=75.0,          # float
-    step=1.0,            # float
-    format="%.2f",       # show two decimal places
-    key="fuel_delivery_fee"
-    )
+     fuel_delivery_fee = st.number_input("Fuel Delivery Fee ($)"),
+     min_value=0.0,       # float
+     max_value=1000.0,    # float
+     value=75.0,          # float
+     step=1.0,            # float
+     format="%.2f",       # show two decimal places
+     key="fuel_delivery_fee"
+     )
         
         # Row 2: PM interval and PM charge
 st.markdown("**Maintenance Information**")
@@ -1028,30 +1026,29 @@ pm_col1, pm_col2 = st.columns([1, 1])
 
 with pm_col1:
      pm_interval_hrs = st.number_input("PM Interval Hrs"),
-        min_value=0,
-        max_value=1000,
-        value=0,
-        step=1.0,
-        key="pm_interval_hrs"
+     min_value=0,
+     max_value=1000,
+     value=0,
+     step=1.0,
+     key="pm_interval_hrs"
     )
 
 with pm_col2:
      pm_charge_selection = st.radio("Is there a PM Charge?"),
      options=["No", "Yes"],
-                index=0,
-                key="pm_charge_radio",
-                horizontal=True
-            )
+     index=0,
+     key="pm_charge_radio",
+     horizontal=True
+    )
             
-if pm_charge_selection == "Yes":
-                cost_per_pm = st.number_input("Cost per PM ($)"),
-                    min_value=0.0,
-                    max_value=10000.0,
-                    value=0.0,
-                    step=0.1,
-                    format="%.2f",
-                    key="cost_per_pm"
-                )
+if pm_charge_selection == "Yes": cost_per_pm = st.number_input("Cost per PM ($)"),
+   min_value=0.0,
+   max_value=10000.0,
+   value=0.0,
+   step=0.1,
+   format="%.2f",
+   key="cost_per_pm"
+  )
         
         # Row 3: Weekly and Monthly rates for both systems
 st.markdown("**System Rates**")
@@ -1063,21 +1060,21 @@ with rate_col1:
 
      default_rate = 1500.0
      eboss_weekly_rate = st.number_input("Weekly Rate ($)"),
-        min_value=0.0,
-        max_value=100000.0,
-        value=max(default_rate, 0.0),
-        step=50.0,
-        format="%.2f",
-        key="eboss_weekly_rate"
+     min_value=0.0,
+     max_value=100000.0,
+     value=max(default_rate, 0.0),
+     step=50.0,
+     format="%.2f",
+     key="eboss_weekly_rate"
     )
 
-    eboss_monthly_rate = st.number_input("Monthly Rate ($)"),
-        min_value=0.0,           # ✅ safer than -1.00
-        max_value=100000.0,
-        value=0.0,
-        step=50.0,
-        format="%.2f",
-        key="eboss_monthly_rate"
+     eboss_monthly_rate = st.number_input("Monthly Rate ($)"),
+     min_value=0.0,           # safer than -1.00
+     max_value=100000.0,
+     value=0.0,
+     step=50.0,
+     format="%.2f",
+     key="eboss_monthly_rate"
     )
 
 # --- Standard Generator ---
@@ -1085,12 +1082,12 @@ with rate_col2:
     st.markdown("**Standard Generator**")
 
     standard_weekly_rate = st.number_input("Weekly Rate ($)"),
-        min_value=0.0,
-        max_value=100000.0,
-        value=0.0,
-        step=50.0,
-        format="%.2f",
-        key="standard_weekly_rate"
+    min_value=0.0,
+    max_value=100000.0,
+    value=0.0,
+    step=50.0,
+    format="%.2f",
+    key="standard_weekly_rate"
     )
 
     standard_monthly_rate = st.number_input("Monthly Rate ($)"),
