@@ -1027,7 +1027,7 @@ st.markdown("**Maintenance Information**")
 pm_col1, pm_col2 = st.columns([1, 1])
 
 with pm_col1:
-    pm_interval_hrs = st.number_input("PM Interval Hrs"),
+     pm_interval_hrs = st.number_input("PM Interval Hrs"),
         min_value=0,
         max_value=1000,
         value=0,
@@ -1036,17 +1036,15 @@ with pm_col1:
     )
 
 with pm_col2:
-    pm_charge_selection = st.radio(
-    "Is there a PM Charge?",
-    options=["No", "Yes"],
+     pm_charge_selection = st.radio("Is there a PM Charge?"),
+     options=["No", "Yes"],
                 index=0,
                 key="pm_charge_radio",
                 horizontal=True
             )
             
 if pm_charge_selection == "Yes":
-                cost_per_pm = st.number_input(
-                    "Cost per PM ($)",
+                cost_per_pm = st.number_input("Cost per PM ($)"),
                     min_value=0.0,
                     max_value=10000.0,
                     value=0.0,
@@ -1061,11 +1059,10 @@ rate_col1, rate_col2 = st.columns([1, 1])
 
 # --- EBOSS Hybrid System ---
 with rate_col1:
-    st.markdown("**EBOSS Hybrid System**")
+     st.markdown("**EBOSS Hybrid System**")
 
-    default_rate = 1500.0
-    eboss_weekly_rate = st.number_input(
-        "Weekly Rate ($)",
+     default_rate = 1500.0
+     eboss_weekly_rate = st.number_input("Weekly Rate ($)"),
         min_value=0.0,
         max_value=100000.0,
         value=max(default_rate, 0.0),
@@ -1074,8 +1071,7 @@ with rate_col1:
         key="eboss_weekly_rate"
     )
 
-    eboss_monthly_rate = st.number_input(
-        "Monthly Rate ($)",
+    eboss_monthly_rate = st.number_input("Monthly Rate ($)"),
         min_value=0.0,           # ✅ safer than -1.00
         max_value=100000.0,
         value=0.0,
@@ -1088,8 +1084,7 @@ with rate_col1:
 with rate_col2:
     st.markdown("**Standard Generator**")
 
-    standard_weekly_rate = st.number_input(
-        "Weekly Rate ($)",
+    standard_weekly_rate = st.number_input("Weekly Rate ($)"),
         min_value=0.0,
         max_value=100000.0,
         value=0.0,
@@ -1098,8 +1093,7 @@ with rate_col2:
         key="standard_weekly_rate"
     )
 
-    standard_monthly_rate = st.number_input(
-        "Monthly Rate ($)",
+    standard_monthly_rate = st.number_input("Monthly Rate ($)"),
         min_value=0.0,
         max_value=100000.0,
         value=0.0,
@@ -1113,13 +1107,13 @@ st.divider()
 action_col1, action_col2, action_col3 = st.columns([1, 1, 1])
         
 with action_col1:
-    if st.button("📊 Generate Analysis", key="generate_cost_analysis", use_container_width=True):
-        st.session_state.show_cost_dialog = False
-        st.session_state.show_cost_analysis = True
-        st.rerun()
+    if st.button("Generate Analysis", key="generate_cost_analysis", use_container_width=True):
+       st.session_state.show_cost_dialog = False
+       st.session_state.show_cost_analysis = True
+       st.rerun()
         
         with action_col2:
-            if st.button("🔄 Reset Form", key="reset_cost_form", use_container_width=True):
+            if st.button("Reset Form", key="reset_cost_form", use_container_width=True):
                 # Reset all form values
                 for key in ['local_fuel_price', 'fuel_delivery_fee', 'pm_interval_hrs', 'cost_per_pm', 
                            'eboss_weekly_rate', 'eboss_monthly_rate', 'standard_weekly_rate', 'standard_monthly_rate']:
@@ -1128,9 +1122,9 @@ with action_col1:
                 st.rerun()
         
         with action_col3:
-            if st.button("❌ Cancel", key="cancel_cost_dialog", use_container_width=True):
-                st.session_state.show_cost_dialog = False
-                st.rerun()
+            if st.button("Cancel", key="cancel_cost_dialog", use_container_width=True):
+               st.session_state.show_cost_dialog = False
+               st.rerun()
 
 def calculate_mathematical_difference(eboss_value, standard_value, spec_name):
     """Calculate mathematical difference between EBOSS and standard values"""
