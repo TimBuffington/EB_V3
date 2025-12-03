@@ -1040,14 +1040,13 @@ with pm_col2:
      key="pm_charge_radio",
      horizontal=True
     
-            
 if pm_charge_selection == "Yes": cost_per_pm = st.number_input("Cost per PM ($)"),
-   min_value=0.0,
-   max_value=10000.0,
-   value=0.0,
-   step=0.1,
-   format="%.2f",
-   key="cost_per_pm"
+min_value=0.0,
+max_value=10000.0,
+value=0.0,
+step=0.1,
+format="%.2f",
+key="cost_per_pm"
   
         
         # Row 3: Weekly and Monthly rates for both systems
@@ -1091,12 +1090,12 @@ with rate_col2:
     
 
     standard_monthly_rate = st.number_input("Monthly Rate ($)"),
-        min_value=0.0,
-        max_value=100000.0,
-        value=0.0,
-        step=50.0,
-        format="%.2f",
-        key="standard_monthly_rate"
+    min_value=0.0,
+    max_value=100000.0,
+    value=0.0,
+    step=50.0,
+    format="%.2f",
+    key="standard_monthly_rate"
     
 
         # Action buttons
@@ -1109,7 +1108,7 @@ with action_col1:
        st.session_state.show_cost_analysis = True
        st.rerun()
         
-        with action_col2:
+with action_col2:
             if st.button("Reset Form", key="reset_cost_form", use_container_width=True):
                 # Reset all form values
                 for key in ['local_fuel_price', 'fuel_delivery_fee', 'pm_interval_hrs', 'cost_per_pm', 
@@ -1118,7 +1117,7 @@ with action_col1:
                         del st.session_state[key]
                 st.rerun()
         
-        with action_col3:
+with action_col3:
             if st.button("Cancel", key="cancel_cost_dialog", use_container_width=True):
                st.session_state.show_cost_dialog = False
                st.rerun()
