@@ -14,8 +14,8 @@ import streamlit as st
 
 st.markdown(f"""
 <style>
-.stColumn {
-    flex: 1 1 0%;
+div[data-testid="column"] {
+    flex: 1 1 0%;!important;
     min-width: 0 !important;
     max-width: 100% !important;
     overflow-wrap: break-word;
