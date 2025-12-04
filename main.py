@@ -1276,7 +1276,7 @@ st.markdown("""
 
 """, unsafe_allow_html=True)
 
-
+#------------COST ANALYSIS--------------------
 title = "Cost Analysis"
 
 st.markdown(f"""
